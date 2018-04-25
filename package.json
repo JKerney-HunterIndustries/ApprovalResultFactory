@@ -4,7 +4,7 @@
   "description": "Automatically build service fakes into an approvable result object",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "node ./node_modules/mocha/bin/mocha ./tests/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,12 @@
   },
   "homepage": "https://github.com/JKerney-HunterIndustries/ApprovalResultFactory#readme",
   "devDependencies": {
-    "mocha": "^5.1.1"
+    "approvals": "^2.1.2",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "mocha": "^5.1.1",
+    "sinon": "^4.5.0",
+    "stubcontractor": "^0.5.3"
   },
   "dependencies": {
     "dject": "^1.9.3",

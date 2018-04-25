@@ -19,7 +19,7 @@ function resultBuilderFactory(
     }
 
     function preParseArgument(spy, parmeterIndex) {
-        transformArgument(spy, parmeterIndex, (JSON.parse))
+        transformArgument(spy, parmeterIndex, (JSON.parse));
     }
 
     const isSpy = signet.isTypeOf('spyFunction');
@@ -86,11 +86,11 @@ function resultBuilderFactory(
                 addData
             ),
             addFakeService: signet.enforce(
-                'fakeObject => void',
+                'fakeObject => undefined',
                 addFakeService
             ),
             addFakeServices: signet.enforce(
-                'fakeObjects:array<fakeObject> => void',
+                'fakeObjects:array<fakeObject> => undefined',
                 addFakeServices
             )
         };

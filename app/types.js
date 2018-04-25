@@ -5,8 +5,13 @@ function types() {
         if (signet.isType('fakeObject')) {
             return;
         }
+
+        signet.alias('name', 'string');
+
+        signet.alias('maybe', 'variant<null, undefined, _>');
+
         signet.defineDuckType('fakeObject', {
-            name: 'name'
+            __name: 'name'
         });
 
         signet.subtype('function')('spyFunction', function (value) {
