@@ -1,5 +1,5 @@
 {
-  "name": "approvalresultfactory",
+  "name": "approval-result-factory",
   "version": "0.0.0",
   "description": "Automatically build service fakes into an approvable result object",
   "main": "index.js",
