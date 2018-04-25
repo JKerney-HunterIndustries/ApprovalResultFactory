@@ -2,4 +2,4 @@
 
 const container = require('./djectContainer');
 
-return container.build('resultBuilderFactory');
+module.exports = container.build('resultBuilderFactory');

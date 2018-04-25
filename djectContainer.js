@@ -1,10 +1,12 @@
 'use strict';
 
+const path = require('path');
+
 var config = {
-    cwd: __dirname + '/app',
+    cwd: path.join(__dirname, 'app'),
     modulePaths: [
-        './',
-        './wrappedModules',
+        '',
+        'wrappedModules',
     ],
     allowOverride: false,
     eagerLoad: false
