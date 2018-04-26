@@ -1,0 +1,26 @@
+{
+    "fakeService1.one": [
+        [
+            "one called"
+        ]
+    ],
+    "fakeService1.four": [
+        [
+            1,
+            "2",
+            3,
+            "four"
+        ]
+    ],
+    "fakeService3.two": [
+        [
+            1,
+            "two"
+        ]
+    ],
+    "fakeService3.three": [
+        [
+            "three called"
+        ]
+    ]
+}
