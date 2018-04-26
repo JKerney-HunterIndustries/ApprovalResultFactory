@@ -1,0 +1,15 @@
+{
+    "fakeService.one": [
+        [
+            "one was called"
+        ]
+    ],
+    "fakeService.four": [
+        [
+            1,
+            2,
+            3,
+            4
+        ]
+    ]
+}
