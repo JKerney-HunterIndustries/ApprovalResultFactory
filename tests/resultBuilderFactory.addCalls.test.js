@@ -8,7 +8,7 @@ describe('resultBuilderFactory', function () {
 
     const sinon = toolsContainer.build('sinon');
     const stubcontractor = toolsContainer.build('stubcontractorConfig');
-    const { prettyJson } = toolsContainer.build('prettyJson');
+    const { asInformationString } = toolsContainer.build('objectInformation');
 
     let resultBuilderFactory;
 
@@ -25,9 +25,9 @@ describe('resultBuilderFactory', function () {
             let spy1 = sinon.spy();
             let spy2 = sinon.spy();
             let spy3 = sinon.spy();
-            let contracted1 = stubcontractor.buildFunctionFake(function (one, two) {}).onCall(sinon.spy());
-            let contracted2 = stubcontractor.buildFunctionFake(function (one) {}).onCall(sinon.spy());
-            
+            let contracted1 = stubcontractor.buildFunctionFake(function (one, two) { }).onCall(sinon.spy());
+            let contracted2 = stubcontractor.buildFunctionFake(function (one) { }).onCall(sinon.spy());
+
 
             spy1('spy1', 'called');
             spy3('spy', 3, 'called');
@@ -41,7 +41,7 @@ describe('resultBuilderFactory', function () {
                 ['second contracted', contracted2],
             ]);
 
-            this.verify(prettyJson(resultBuilder.getResult()));
+            this.verify(asInformationString(resultBuilder.getResult()));
         });
     });
 });

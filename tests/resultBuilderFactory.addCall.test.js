@@ -16,24 +16,6 @@ describe('resultBuilderFactory', function () {
         resultBuilderFactory = testContainer.build('resultBuilderFactory');
     });
 
-    describe('getResult', function () {
-        it('returns an empty object, if nothing has been done', function () {
-            let result = resultBuilderFactory().getResult();
-
-            assert.deepEqual(result, {});
-        });
-
-        it('returns unmodified starting object if nothing is done and a starting object is given', function () {
-            let startObject = { thing: 'myThing' };
-
-            let newObject = Object.assign({}, startObject);
-
-            let result = resultBuilderFactory(newObject).getResult();
-
-            assert.deepEqual(result, startObject);
-        });
-    });
-
     describe('addCall', function () {
         it('does not add a sinon spy if it has not been called', function () {
             let someMethod = sinon.spy();
