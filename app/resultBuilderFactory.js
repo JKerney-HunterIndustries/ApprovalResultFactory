@@ -34,7 +34,7 @@ function resultBuilderFactory(
                     .filter(key => isSpy(fakeObject[key]))
             );
 
-            keys.forEach(key => result[`${fakeObject.name}.${key}`] = getArgs(fakeObject[key]));
+            keys.forEach(key => result[`${fakeObject.__name}.${key}`] = getArgs(fakeObject[key]));
         }
 
         function addFakeServices(fakeObjects) {
