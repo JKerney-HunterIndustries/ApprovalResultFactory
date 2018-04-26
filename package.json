@@ -18,6 +18,7 @@
   "homepage": "https://github.com/JKerney-HunterIndustries/ApprovalResultFactory#readme",
   "devDependencies": {
     "approvals": "^2.1.2",
+    "approvals-config-factory": "^1.0.0",
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "mocha": "^5.1.1",

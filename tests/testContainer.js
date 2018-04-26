@@ -1,13 +1,12 @@
 'use strict';
 'use strict';
 
-const path = require('path');
-
 var config = {
-    cwd: path.join(__dirname),
+    cwd: __dirname,
     modulePaths: [
         '',
         'test-utilities',
+        '../app',
         '../app/wrappedModules',
     ],
     allowOverride: false,

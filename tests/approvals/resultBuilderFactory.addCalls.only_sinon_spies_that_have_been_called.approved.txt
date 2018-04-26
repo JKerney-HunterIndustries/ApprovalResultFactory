@@ -1,0 +1,15 @@
+{
+    "first spy": [
+        [
+            "spy1",
+            "called"
+        ]
+    ],
+    "third spy": [
+        [
+            "spy",
+            3,
+            "called"
+        ]
+    ]
+}
