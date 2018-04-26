@@ -6,7 +6,6 @@ describe('resultBuilderFactory', function () {
 
     toolsContainer.build('approvalsConfig')();
 
-    const assert = toolsContainer.build('chai').assert;
     const sinon = toolsContainer.build('sinon');
     const stubcontractor = toolsContainer.build('stubcontractorConfig');
     const { prettyJson } = toolsContainer.build('prettyJson');
@@ -26,14 +25,20 @@ describe('resultBuilderFactory', function () {
             let spy1 = sinon.spy();
             let spy2 = sinon.spy();
             let spy3 = sinon.spy();
+            let contracted1 = stubcontractor.buildFunctionFake(function (one, two) {}).onCall(sinon.spy());
+            let contracted2 = stubcontractor.buildFunctionFake(function (one) {}).onCall(sinon.spy());
+            
 
             spy1('spy1', 'called');
             spy3('spy', 3, 'called');
+            contracted2('contractor 2 called');
 
             resultBuilder.addCalls([
                 ['first spy', spy1],
                 ['second spy', spy2],
                 ['third spy', spy3],
+                ['first contracted', contracted1],
+                ['second contracted', contracted2],
             ]);
 
             this.verify(prettyJson(resultBuilder.getResult()));

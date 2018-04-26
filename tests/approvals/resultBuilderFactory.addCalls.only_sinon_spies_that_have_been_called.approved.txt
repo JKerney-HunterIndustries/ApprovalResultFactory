@@ -11,5 +11,10 @@
             3,
             "called"
         ]
+    ],
+    "second contracted": [
+        [
+            "contractor 2 called"
+        ]
     ]
 }
