@@ -78,11 +78,11 @@ function resultBuilderFactory(
                 addCalls
             ),
             addDatum: signet.enforce(
-                'name:string, data:* => undefined',
+                'name, data:* => undefined',
                 addDatum
             ),
             addData: signet.enforce(
-                'data:array<tuple<string, *>> => undefined',
+                'data:array<tuple<name, *>> => undefined',
                 addData
             ),
             addFakeService: signet.enforce(
