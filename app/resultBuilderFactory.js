@@ -107,7 +107,7 @@ function resultBuilderFactory(
     );
         
     factory.transformArgument = signet.enforce(
-        'spy:function, parmeterIndex:leftBoundedInt<0>, transformer:function<* => *> => *',transformArgument
+        'spy:function, parmeterIndex:leftBoundedInt<0>, transformer:function<* => *> => undefined',transformArgument
     );
 
     return factory;
