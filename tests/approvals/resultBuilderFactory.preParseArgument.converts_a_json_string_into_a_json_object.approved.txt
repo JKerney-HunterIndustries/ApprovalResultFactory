@@ -1,0 +1,29 @@
+{
+    "fakeFunction": [
+        [
+            1,
+            2,
+            3,
+            {
+                "name": "my object 1",
+                "age": 43,
+                "answer": 42
+            },
+            4,
+            5
+        ],
+        [
+            6,
+            7,
+            8,
+            {
+                "name": "my object 2",
+                "pokemon": "dido",
+                "food": "candy",
+                "age": 2
+            },
+            9,
+            10
+        ]
+    ]
+}
