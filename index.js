@@ -6,7 +6,8 @@ const factory = container.build('resultBuilderFactory');
 const signet = container.build('signet');
 
 const types = {
-    isSpyFunction: signet.isTypeOf('spyFunction')
+    isFakeObject: signet.isTypeOf('fakeObject'),
+    isSpyFunction: signet.isTypeOf('spyFunction'),
 };
 
 factory.types = types;
