@@ -98,7 +98,7 @@ Because only ```call2``` was exersized the result looks like:
 
 ---
 
-#addCalls
+## addCalls
 
 'addcalls' addes spies in an array of arrays.
 
