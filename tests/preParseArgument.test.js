@@ -7,7 +7,6 @@ describe('resultBuilderFactory', function () {
     toolsContainer.build('approvalsConfig')();
 
     const sinon = toolsContainer.build('sinon');
-    const stubcontractor = toolsContainer.build('stubcontractorConfig');
     const { asInformationString } = toolsContainer.build('objectInformation');
 
     let resultBuilderFactory;
