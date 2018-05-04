@@ -27,6 +27,16 @@ function types() {
                 )
             );
         });
+
+        signet.defineDuckType('resultBuilder', {
+            getResult: 'function',
+            addCall: 'function',
+            addCalls: 'function',
+            addDatum: 'function',
+            addData: 'function',
+            addFakeService: 'function',
+            addFakeServices: 'function',
+        });
     }
 
     return buildTypes;

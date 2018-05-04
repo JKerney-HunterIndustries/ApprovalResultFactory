@@ -35,69 +35,79 @@ function resultBuilderFactory(
             );
 
             keys.forEach(key => result[`${fakeObject.__name}.${key}`] = getArgs(fakeObject[key]));
+            return builder;
         }
 
         function addFakeServices(fakeObjects) {
             fakeObjects.forEach(addFakeService);
+            return builder;
         }
 
         function addDatum(name, datum) {
             result[name] = datum;
+            return builder;
         }
 
         function addData(data) {
             data.forEach(datum => result[datum[0]] = datum[1]);
+            return builder;
         }
 
         function addCall(name, spyFunction) {
             let args = getArgs(spyFunction);
             if (args.length === 0) {
-                return;
+                return builder;
             }
 
             addDatum(name, args);
+
+            return builder;
         }
 
         function addCalls(calls) {
             calls.forEach(call => {
                 addCall(call[0], call[1]);
             });
+
+            return builder;
         }
 
-        return {
+        const builder = {
             getResult: signet.enforce(
                 '() => object',
                 () => result
             ),
             addCall: signet.enforce(
-                'name, spyFunction:function => undefined',
+                'name, spyFunction:function => resultBuilder',
                 addCall
             ),
             addCalls: signet.enforce(
-                'calls:array<tuple<name, spyFunction:function>> => undefined',
+                'calls:array<tuple<name, spyFunction:function>> => resultBuilder',
                 addCalls
             ),
             addDatum: signet.enforce(
-                'name, data:* => undefined',
+                'name, data:* => resultBuilder',
                 addDatum
             ),
             addData: signet.enforce(
-                'data:array<tuple<name, *>> => undefined',
+                'data:array<tuple<name, *>> => resultBuilder',
                 addData
             ),
             addFakeService: signet.enforce(
-                'fakeObject => undefined',
+                'fakeObject => resultBuilder',
                 addFakeService
             ),
             addFakeServices: signet.enforce(
-                'fakeObjects:array<fakeObject> => undefined',
+                'fakeObjects:array<fakeObject> => resultBuilder',
                 addFakeServices
             )
         };
+
+        return builder;
     }
 
     let factory = signet.enforce(
-        'baseResult:maybe<object> => object',
+        'baseResult:maybe<object> => resultBuilder',
         resultFactory
     );
 

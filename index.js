@@ -8,6 +8,7 @@ const signet = container.build('signet');
 const types = {
     isFakeObject: signet.isTypeOf('fakeObject'),
     isSpyFunction: signet.isTypeOf('spyFunction'),
+    isResultBuilder: signet.isTypeOf('resultBuilder'),
 };
 
 factory.types = types;
